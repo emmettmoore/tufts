@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>JSON vs. XML</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>JSON vs. XML</h1>
+    <ul class= "nav-bar">
+        <li class= "nav-bar"> <a href="finalreport.html" class ="nav-bar">Report</a></li>
+        <li class= "nav-bar"> <a href="biblio.html" class = "nav-bar">Works Cited</a></li>
+    </ul>
+    <br />
+    <div id = "header">
+	    Emmett Moore<br />
+    	December 13th, 2013 <br />
+    	Comp 150-IDS <br /> 
+        <a href="http://xkcd.com/927/">xkcd</a> <span class= "small-text">[15]</span>.
+    </div>
+<div id="report-body">
+<h3>Introduction</h3>
+
+<p>Since the inception of the World Wide Web, electronic communication and data storage have evolved to take a large role in people's lives. One result of this change has been the need for standard data formats to simplify and unify this communication. Initially, most information used on the web was published with HTML, which was intended mostly as a means of information presentation. Since then, HTML has grown to be used beyond its original intention in the form of web applications that use imperative scripting languages like JavaScript. Such structures naturally fit into the HTML mold, however; all a page has to do is link to a script. For data management, HTML is particularly inappropriate. HTML was not intended to be used to store large amounts of data or to process it [<a href="http://ccollins.wordpress.com/2008/03/03/a-brief-history-of-xml/">4</a>]. The predefined tags would be clumsy and out of place. Also, the need for standard data models does not necessitate their public use on the web. In fact, the goal is often for the data to be kept private! What was needed was a standard data model that was extensible, machine-processable, human readable, and perhaps most important, as simple as possible. </p>
+
+<p>In the late 1990's and early 2000's, XML and JSON both emerged as promising options for this data format. Developers soon started to choose one data format or the other, but the long-term implications of their choices were often unclear. XML and JSON are both important data formats and their differences are often very subtle. Nevertheless, they both have their distinct strengths and weaknesses. For example, some might argue that XML is more easily extensible that JSON, but JSON is less verbose and easier to use with web applications. For this reason, neither XML nor JSON will prevail over the other as a universal data format of choice; rather, they both play an important role in data conformity and give developers a broader tool-kit to make an informed decision about which format is best suited for their particular needs.</p>
+
+<h3>Technology History</h3>
+
+<h5>XML</h5>
+
+<p>In 1996, eXstensible Markup Language, or XML, was introduced as what was hoped to be the solution to everybody's data problems. Two of the most important considerations in the design of XML were to make a document format that was extensibile and simple. The XML data model needed to be as flexible and broad as the data it represented, but it also needed to be simple enough to scale and become standard. An XML Working Group was made with Dan Connolly serving as the group's W3C Contact [<a href="http://www.w3.org/TR/REC-xml/">10</a>]. According to the <a href="http://www.w3.org/TR/REC-xml/#sec-origin-goals">W3C XML Specifation</a>, some of the major design goals included the following:</p>
+
+<blockquote>
+  <ul>
+<li>XML shall be straightforwardly usable over the Internet.</li>
+<li>XML shall support a wide variety of applications.</li>
+<li>It shall be easy to write programs which process XML documents.</li>
+<li>XML documents should be human-legible and reasonably clear.</li>
+<li>XML documents shall be easy to create. <span class="plain-text">[<a href="http://www.w3.org/TR/REC-xml/#sec-origin-goals">10</a>]</span></li>
+</ul>
+</blockquote>
+
+<p>XML was designed as a simple application profile of SGML (Standard General Markup Language) that was readable by any SGML system [<a href="http://www.xml.com/pub/a/98/10/guide0.html">16</a>]. SGML is a general syntax; it represents a standard syntax for any markup language. XML cut out many of the details of SGML, allowing it to be simply expressed in Extended Backus-Naur Form which in turn makes it possible to easily parse, read, and understand XML [<a href="http://www.xml.com/pub/a/98/10/guide0.html">16</a>]. The syntax of XML can be found in detail at <a href="http://www.w3.org/TR/REC-xml/">w3c.org/TR/REC-xml/</a>.</p>
+
+<h5>JSON</h5>
+
+<p>JSON was created much more casually than XML was. While Douglas Crockford is credited for publicizing and standardizing JSON format, he claims that he didn't invent it because "it already existed in nature" [<a href="http://transcriptvids.com/v/-C-JoyNuQJs.html">9</a>]. He claims to have only formalized its documentation because customers of his complained that it wasn't standardized. Even though it was documented as a subset of ECMA 262 at the time, this caused Crockford to purchase the '<a href="json.org">json.org</a>' domain in 2001. Crockford used <a href="json.org">json.org</a> to present three different types of documentation for JSON: a visual railroad diagram, a formal BNF grammar, and and informal description [<a href="http://transcriptvids.com/v/-C-JoyNuQJs.html">9</a>]. In what may very well be a great metaphor for JSON itself, json.org provides a very concise yet thorough description of JSON, claiming that it "completely describes the language" [<a href="json.org">6</a>]. </p>
+
+<p>While JSON is a based on a subset of the Javascript programming language, it is completely language independent. It is a text format that uses data structure conventions that are universal in most modern progamming languages, like structs, arrays, strings, booleans, and numbers [<a href="json.org">6</a>]. It is built on two structures: </p>
+
+<ul>
+<li>A collection of name/value pairs, which can represent an object, struct, or hash table, among other data types.</li>
+<li>An ordered list of values, which are useful for creating arrays or sequences. <a href="json.org">6</a></li>
+</ul>
+
+<p>Crockford claims that "these are universal data structures" and "it makes sense that a data format that is interchangeable with programming languages also be based on these structures" [<a href="json.org">6</a>], and provides few details beyond that. Crockford says that all he did for JSON was "[give] it a specification, and a little website" and that "all the rest of it happened by itself" [<a href="http://transcriptvids.com/v/-C-JoyNuQJs.html">9</a>].</p>
+
+<h3>JSON: A Simple Model for Simple Data</h3>
+
+<p>Perhaps the most interesting distinction between XML and JSON is the difference in complexity of the two data models. In JSON, there is usually only one way to represent data without entirely changing its nature. In XML, however, the same DOM tree structure can often be represented a number of different ways! Consider the following example: how would we store a fruit's type, color, and mass in XML? One option is as follows:</p>
+
+<pre><code>&lt;fruit type="apple"&gt;
+    &lt;color&gt;red&lt;/color&gt;
+    &lt;mass unit="grams"&gt;300&lt;/mass&gt;
+&lt;/fruit&gt;
+</code></pre>
+
+<p>But another equally acceptable option could be:</p>
+
+<pre><code>&lt;fruit&gt;
+    &lt;type&gt;apple&lt;/type&gt;
+    &lt;color&gt;red&lt;/color&gt;
+    &lt;mass&gt;
+        &lt;unit&gt;grams&lt;/unit&gt;
+        &lt;value&gt;300&lt;/value&gt;
+    &lt;/mass&gt;
+&lt;/fruit&gt;
+</code></pre>
+
+<p>Here, the choice of whether to use an attribute or not presents a seemingly unnecessary option that can lead to data inconformity. Even worse, XML parsers and generators have to make a decision about how to handle this ambiguity. In fact, <a href="http://www.w3schools.com/xml/xml_attributes.asp">W3Schools</a> notes that "there are no rules about when to use attributes or when to use elements" but advises one to avoid attributes in favor of elements [<a href="http://www.w3schools.com/xml/xml_attributes.asp">20</a>]. But even if everybody used tags instead of attributes, XML parsers would still have to accept attributes! This inevitably causes more overhead, code, and headbanging for the developers that have to handle this. Consider the same data represented in JSON:</p>
+
+<pre><code>{   "fruit":
+    {
+        "type": "apple",
+        "color": "Anna",
+        "mass":
+        {
+            "unit": "grams",
+            "value": "300"
+        }
+    }
+}
+</code></pre>
+
+<p>For simple structures like this, JSON seems to be the obvious choice for a few reasons:</p>
+
+<ol>
+<li><em>Disambiguation</em>
+<ul>
+<li>Lest the hierarchical structure of this data be fundamentally changed (e.g. making "fruit" an attribute), there is really only one clear way to represent it in JSON.</li>
+<li>Disambiguity in data leads to less overhead for data miners and developers.</li>
+</ul></li>
+<li><em>Brevity</em>
+<ul>
+<li>In XML, every tag is declared twice! JSON recognizes and omits this redundancy. </li>
+<li>This structure is represented in 84 characters in JSON as compared to 123 in XML (actually it is represented in 75 characters using attributes, but again, this can ambiguate data).</li>
+</ul></li>
+</ol>
+
+<p>Even taking a look at the length and complexity of the <a href="http://www.w3.org/TR/REC-xml">W3C XML specification</a> as compared to <a href="http://www.ietf.org/rfc/rfc4627.txt">RFC 4627</a> where JSON is explained makes it clear that JSON is a much simpler structure than XML. So why even bother with XML? As Douglas Crockford put it, "XML is the standard, so shut up! Shut Up!" [<a href="http://transcriptvids.com/v/-C-JoyNuQJs.html">9</a>]. What does a few more words and some surmountable data disambiguity mean if it saves developers from having to rewrite millions of lines of legacy code? XML has <em>inertia</em>, and stopping it would be very difficult.</p>
+
+<h3>XML: An Open Model for Complex Data</h3>
+
+<p>One argument defending the use of XML comes from Norman Walsh who reasoned that "XML wasn't designed to solve the problem of transmitting structured bundles of atomic values. XML was designed to solve the problem of unstructured data" [<a href="http://norman.walsh.name/2010/11/17/deprecatingXML">18</a>]. The above "fruit" example is very simple, making JSON a great structure to represent it. For more complex examples, JSON might be limiting. What is the best structure to represent data whose structure is prone to evolving over time? Is it possible to give a more stringent definition of properly formatted data, beyond that which is specified in the data format you choose? Is there a way to specify an arbitrary stream of bytes that doesn't directly fit in the data model being used? How should mixed content be represented? In many cases, JSON doesn't have a clear solution to these problems; at least not one that fits well in key-value mapping. Data isn't always complicated but it can be, and that is when XML comes in handy.</p>
+
+<h5>DTDS (Document Type Definitions)</h5>
+
+<p>XML has DTDs, or document type definitions that use EBNF style grammars to allow a user to specify the form of a structure [<a href="http://www.w3.org/TR/REC-xml/#sec-notation">10</a>]. One common use is to make sure that a list of elements has at least one member, as illustrated in the following example:</p>
+
+<pre><code>&lt;!ELEMENT fruits (fruit+)&gt;
+&lt;!ELEMENT fruit (type?, color?, mass?)&gt;
+&lt;!ELEMENT type (#PCDATA)&gt;
+&lt;!ELEMENT color (#PCDATA)&gt;
+&lt;!ELEMENT unit (#PCDATA)&gt;
+&lt;!ELEMENT mass (#PCDATA)&gt;
+</code></pre>
+
+<p>[<a href="http://www.w3.org/TR/REC-xml/#elemdecls">10</a>]</p>
+
+<p>In this example, the elements "type", "color", "unit", and "mass" can be any parsed-content data, including <em>mixed content</em>. A "fruit" may contain a type, color, and/or mass, but all three of these elements are optional. For an element to be a "fruits" must contain one or more fruit. Document Type Definitions in XML allow a user to define properly formatted data when the XML specifications may not be strict enough. XML also casually enables mixed content, a feature that JSON struggles to handle. This is because the primitive type "#PCDATA" or "parsed character data" in a Document Type Definition allows for mixed content [<a href="http://www.w3.org/TR/REC-xml/#sec-mixed-content">10</a>]! In JSON, the primitive type is either a string, number, boolean expression, or null. This is a classic text vs. binary tradeoff where XML chose the mixed-content enabling text, and JSON conveniently chose both, while embracing some limitations on the complexity of the data it can represent.</p>
+
+<h5>CDATA Sections</h5>
+
+<p>Another unique capability of XML is that it is possible to turn of the parser by declaring text to be in a CDATA (or "character data") section [<a href="http://www.w3.org/TR/REC-xml/#cdata-sect">10</a>]. CDATA sections can be particularly useful if data is to hold a script, for example [<a href="http://www.xml.com/pub/a/98/10/guide0.html">16</a>]. If one were to include C code in XML, the syntax would be as follows:</p>
+
+<pre><code>&lt;![CDATA[
+void myfunction(int i, char * c, float f){
+    //do something
+}]]&gt;
+</code></pre>
+
+<p>While it is possible to <a href="http://stackoverflow.com/questions/1443158/binary-data-in-json-string-something-better-than-base64">encode scripts in JSON</a>, it does not naturally fit into the data model and requires both sides to agree upon a common interpretation [2]. XML, on the other hand, is able allow such a format to be sent over the wire without much overhead.</p>
+
+<h3>Choice of Format</h3>
+
+<h5>Microsoft Office Open XML File Formats</h5>
+
+<p>One of the most commonly used cases for XML is Microsoft Office Open XML File Format, which began in 2007 when Microsoft decided to apppend the letter "x" to each format (docx, xlsx, pptx, etc.) and update its file formats to use XML [<a href="http://msdn.microsoft.com/en-us/library/aa338205(v=office.12.aspx)">11</a>]. These new formats are actually zip files with different extensions; unzipping one reveals a folder with a number of directories containing XML files [<a href="http://msdn.microsoft.com/en-us/library/aa338205(v=office.12.aspx)">11</a>]! Microsoft ditched its old format for the new XML based one citing that using XML allows users to "exchange data between Office applications and enterprise systems using XML and ZIP technologies" [<a href="http://msdn.microsoft.com/en-us/library/aa338205(v=office.12.aspx)">11</a>]. Using an open standard like XML allows for data to be interpreted not only by conforming Microsoft systems, but also by any ZIP and XML aware systems. Microsoft Office was also able to assure backwards compatibility with older versions of Office; any previous version can open, edit, and understand the new XML formats without fail [<a href="http://msdn.microsoft.com/en-us/library/aa338205(v=office.12.aspx)">11</a>]. Another reason XML is useful for Microsoft Office is that documents and spreadsheets are often found covered from head to toe with mixed content. The relative ease with which XML can represent mixed content allows for the document to remain fairly readable, as if the tags were merely an addition to the content of the document.</p>
+
+<p>XML makes sense for Microsoft Office documents because XML is a markup language for <em>documents</em> containing structured information [<a href="http://www.xml.com/pub/a/98/10/guide0.html">16</a>]. This is a critical feature of XML that sets it apart from JSON, which is primarily used as an object-notation. As Douglas Crockford put it, "XML is document-oriented" and "JSON is data-oriented" [<a href="http://www.json.org/xml.html">8</a>]. These tools attempt to solve different problems and often one tool is more appropriate for a certain task. What engineers often want is "one tool to rule them all," but that is not realistic. What is important is to determine "of all the tools available for you, what is the best tool for solving any problem" [<a href="http://transcriptvids.com/v/-C-JoyNuQJs.html">9</a>]. In the case of Microsoft Office, the ease with which XML was able to textually describe the Office document made it the appropriate choice of data format over the data-centric JSON.</p>
+
+<h5>JavaScript</h5>
+
+<p>It is no secret that JSON is a built in feature of JavaScript. "JavaScript Object Notation" is a "subset of the object literal notation of JavaScript," allowing it to naturally be used within the language without difficulty [<a href="http://www.json.org/js.html">7</a>]. In fact every object in JavaScript has a built in JSON parser and stringifyer! A JavaScript object (myObject) can be converted into a JSON string (myJSONText) with just the following line:</p>
+
+<pre><code>var myJSONText = JSON.stringify(myObject);
+</code></pre>
+
+<p>And a JSON text string can be converted into an object with the following line:</p>
+
+<pre><code>var myObject2 = JSON.parse(myJSONText);
+</code></pre>
+
+<p>[<a href="http://www.json.org/js.html">7</a>]</p>
+
+<p>After these two lines of code have been run (assuming initial valid parameters), 'myObject' and 'myObject2' should hold the same data, with 'myJSONText' validly representing the object in a JSON string. For use in web-based scripting languages, JSON makes sense because <em>it is already an object format</em>! For this reason, JSON is the right tool for the job to represent object formats.</p>
+
+<h3>Conclusion</h3>
+
+<p>XML is naturally a document format, and while it is flexible enough to represent object oriented data, it can often be unnecessarily powerful for use as a data format. As The Rule Of Least Power states, it is best to "use the least powerful language suitable for expressing information, constraints or programs on the World Wide Web," [14]. JSON is less powerful than XML, and intentionally so--it was intended to represent data structures common to programmers [<a href="http://www.json.org">6</a>], whereas XML was intended to be a broad, general purpose document format. Using XML for representing classical data structures has even been likened to "using an enormous sledgehammer to drive common household nails" [<a href="http://www.codinghorror.com/blog/2008/05/xml-the-angle-bracket-tax.html">1</a>]. It will work, but its not the simplest solution; in this case, JSON is. As Douglas Crockford put it, "JSON isn't necessarily the best tool for every job, but for the ons it is, you can use it," [<a href="http://transcriptvids.com/v/-C-JoyNuQJs.html">9</a>]. In conclusion, choosing between JSON and XML is a matter of understanding the data at hand, and finding the simplest way to represent it. For many document formats, XML will probably the cake. For simple objects, JSON is probably a simpler solution. Every data problem is different and there is no one universal data format for every problem. XML and JSON are both here to stay, and that is a good thing; now there are two valuable tools in our toolbox, not just one.</p>
+</div>
+
+</body>
+</html>
