@@ -1,0 +1,277 @@
+<p><!DOCTYPE html>
+<html>
+<head>
+        <title>JSON vs. XML</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body></p>
+
+<h1>h1 lorem Ipsum</h1>
+
+<h2>h2 lorem Ipsum</h2>
+
+<h3>h3 lorem Ipsum</h3>
+
+<h4>h4 lorem Ipsum</h4>
+
+<h2>References</h2>
+
+<h3><a href="http://www.json.org/xml.html" title="json.org">json.org</a></h3>
+
+<ul>
+<li>Based on a subset of the JavaScript Programming Language.</li>
+<li>JSON is a text format that is completely language independent but uses data structure conventions that are familiar to programmers of the C-family languages</li>
+<li><p>Built on two structures:</p>
+
+<ol>
+<li>A collection of name/value pairs (object, record, struct, hash table, etc.).</li>
+<li>An ordered list of values (array, vector, list, or sequence).</li>
+</ol></li>
+<li><p>JSON claims:</p>
+
+<ol>
+<li>"These are universal data structures."</li>
+<li>"Virtually all modern programming languages support them in one form or another."</li>
+<li>"It makes sense that a data format that is interchangeable with programming languages also be based on these structures."</li>
+</ol></li>
+</ul>
+
+<h3><a href="http://www.w3.org/TR/REC-xml/" title="W3 XML Specifications">W3 XML Specifications</a></h3>
+
+<p>Defines the syntax of XML.</p>
+
+<h2>Goals of XML with extra commments from <a href="http://www.codinghorror.com/blog/2008/05/xml-the-angle-bracket-tax.html" title="The Angle Bracket Tax">Walsh, xml.com</a>:</h2>
+
+<blockquote>
+  <ol>
+<li><p>"It shall be straightforward to use XML over the Internet."</p>
+
+<p>Users must be able to view XML documents as quickly and easily as HTML documents. In practice, this will only be possible when XML browsers are as robust and widely available as browsers, but the principle remains.</p></li>
+<li><p>"XML shall support a wide variety of applications." </p>
+
+<p>XML should be beneficial to a wide variety of diverse applications: authoring, browsing, content analysis, etc. Although the initial focus is on serving structured documents over the web, it is not meant to narrowly define XML.</p></li>
+<li><p>"XML shall be compatible with SGML." </p>
+
+<p>Most of the people involved in the XML effort come from organizations that have a large, in some cases staggering, amount of material in SGML. XML was designed pragmatically, to be compatible with existing standards while solving the relatively new problem of sending richly structured documents over the web.</p></li>
+<li><p>"It shall be easy to write programs that process XML documents." </p>
+
+<p>The colloquial way of expressing this goal while the spec was being developed was that it ought to take about two weeks for a competent computer science graduate student to build a program that can process XML documents.</p></li>
+<li><p>"The number of optional features in XML is to be kept to an absolute minimum, ideally zero." </p>
+
+<p>Optional features inevitably raise compatibility problems when users want to share documents and sometimes lead to confusion and frustration.</p></li>
+<li><p>"XML documents should be human-legible and reasonably clear." </p>
+
+<p>If you don't have an XML browser and you've received a hunk of XML from somewhere, you ought to be able to look at it in your favorite text editor and actually figure out what the content means.</p></li>
+<li><p>"The XML design should be prepared quickly." </p>
+
+<p>Standards efforts are notoriously slow. XML was needed immediately and was developed as quickly as possible.</p></li>
+<li><p>"The design of XML shall be formal and concise." </p>
+
+<p>In many ways a corollary to rule 4, it essentially means that XML must be expressed in EBNF and must be amenable to modern compiler tools and techniques. There are a number of technical reasons why the SGML grammar cannot be expressed in EBNF. Writing a proper SGML parser requires handling a variety of rarely used and difficult to parse language features. XML does not.</p></li>
+<li><p>"XML documents shall be easy to create."</p>
+
+<p>Although there will eventually be sophisticated editors to create and edit XML content, they won't appear immediately. In the interim, it must be possible to create XML documents in other ways: directly in a text editor, with simple shell and Perl scripts, etc.</p></li>
+<li><p>"Terseness in XML markup is of minimal importance." </p>
+
+<p>Several SGML language features were designed to minimize the amount of typing required to manually key in SGML documents. These features are not supported in XML. From an abstract point of view, these documents are indistinguishable from their more fully specified forms, but supporting these features adds a considerable burden to the SGML parser (or the person writing it, anyway). In addition, most modern editors offer better facilities to define shortcuts when entering text.</p></li>
+</ol>
+</blockquote>
+
+<h3><a href="http://www.codinghorror.com/blog/2008/05/xml-the-angle-bracket-tax.html" title="The Angle Bracket Tax">xml.com</a></h3>
+
+<p>xml.com seems like a pretty legit website...</p>
+
+<h2>What is XML? (page 1)</h2>
+
+<ul>
+<li>XML is a markup language for <em>documents</em> containing structured information</li>
+<li>Contains words, pictures, and some indication of the role that content plays.</li>
+</ul>
+
+<p>What is a document?</p>
+
+<ul>
+<li>refers to not only traditional documents, but also any sort of <em>data format</em></li>
+</ul>
+
+<p>Difference from HTML</p>
+
+<ul>
+<li>The tags have totally different meanings.</li>
+<li>In XML, the <em>tag semantics and tag set are NOT fixed</em>. In HTML, they are.</li>
+<li>SGML is a sort of metalanguage for describing markup languages. It provides a facility to define tags and the structural relationships between them.</li>
+<li>No predefined tag set leads to no preconceived semantics</li>
+<li>All semantics of an XML document will either be defined by the applications that process them or by stylesheets.</li>
+</ul>
+
+<p>Differences from SGML</p>
+
+<ul>
+<li>XML is an application profile of SGML, which is a standard vendor-independent way to maintain repositories of structured documentation</li>
+<li>Any conformant SGML system will be able to read XML documents.</li>
+<li>Using and understanding XML documents does not require a system that is capable of understanding the full generality of SGML.</li>
+<li>In a nutshell, XML is a restricted form of SGML.</li>
+</ul>
+
+<p>Why XML?</p>
+
+<ul>
+<li>XML was created so that richly structured documents could be used over the web.</li>
+<li>The only viable alternatives were HTML (too specific--used for <em>web documents</em>) and SGML (too broad)</li>
+<li>HTML comes bound with a set of semantics and does not provide arbitrary structure.</li>
+<li>SGML provides arbitrary structure, but is too difficult to implement just for a web browswer. Full SGML systems solve large, complex problems that justify their expense. This expense is very rare in structured documents sent over the web.</li>
+</ul>
+
+<p>Modest Departures from SGML</p>
+
+<ul>
+<li>There is no doc type declaration, instead there is an XML declaration</li>
+<li>empty elements exist <mytag/></li>
+</ul>
+
+<h2>Complex Attributes of XML (i.e. anything not supported by JSON) (page 2)</h2>
+
+<p>Comments (begin with &lt;!-- and end with -->. )</p>
+
+<p>Processing Instructions
+-   Not textually part of XML Document
+-   XML processor is required to pass them to an application.
+-   Processing instructions are identified by XML, and applications can choose to process them if they understand the indentification, or ignore them if they do not.</p>
+
+<p>CDATA Sections
+-   Instructs the parser to ignore most markup characters
+-   Might contain C code, but the real rule is that it turns off the parser for that section.</p>
+
+<p>There are Four types of declaration in XML:</p>
+
+<ol>
+<li><p>Element Type Declarations <a href="http://www.w3.org/TR/REC-xml/" title="W3 XML Specifications">W3C.org Section 3.2</a></p>
+
+<ul>
+<li>Identify the names of elements and the nature of their content</li>
+<li>Allows you to declare that certain element tags require certain fields.</li>
+</ul></li>
+<li><p>Attribute List Declarations <a href="http://www.w3.org/TR/REC-xml/" title="W3 XML Specifications">Section 3.3</a></p>
+
+<ul>
+<li>Identify which elements may have attributes, what attributes they may have, what values the attributes may hold, and what value is the default.</li>
+</ul></li>
+<li><p>Entity Declarations <a href="http://www.w3.org/TR/REC-xml/" title="W3 XML Specifications">Section 4.2</a></p>
+
+<ul>
+<li>Allows you to associate a name with some other fragment of content.</li>
+</ul></li>
+<li><p>Notation Declarations</p>
+
+<ul>
+<li>Identify specific types of external binary data, passed to processing application, which may make whatever use of it it wishes.</li>
+</ul></li>
+</ol>
+
+<h2>Well-Formed Documents (page 3) <a href="http://www.w3.org/TR/REC-xml/" title="W3 XML Specifications">Section 2.1</a></h2>
+
+<ul>
+<li>A document can be well formed if and only if it follows..... nvm</li>
+</ul>
+
+<h3><a href="http://norman.walsh.name/2008/05/13/thetax" title="Norman Walsh' Response to Angle Bracket Tax">Norman Walsh's Angle Bracket Tax Response</a></h3>
+
+<ul>
+<li>Poses some interesting questions about being overly confident that your data format will be extensible enough</li>
+<li>"Are you so confident that your intended use is never going to require any additional complexity that you're willing to bet against XML? Are you sure you'll never want any sort of validation or internationalization support?"</li>
+<li>"it's a question of how you use it"</li>
+</ul>
+
+<h3><a href="http://norman.walsh.name/2010/11/17/deprecatingXML" title="Norman Walsh on Deprecation">Norman Walsh on Deprecation of XML</a></h3>
+
+<ul>
+<li>Admits to many JSON advantages</li>
+<li>"XML wasn't designed to solve the problem of transmitting structured bundles of atomic values. XML was designed to solve the problem of unstructured data."</li>
+</ul>
+
+<h3><a href="http://msdn.microsoft.com/en-us/library/aa338205(v=office.12).aspx" title="Use of Open Office XML File Formats">Microsoft Office Open XML File Formats</a></h3>
+
+<ul>
+<li>Allows interoperability between different Microsoft Office Applications by confiorming to one data format that all apps can understand.</li>
+<li>"The new formats improve file and data management, data recovery, and interoperability with line-of-business systems"</li>
+<li>"Any application that supports XML can access and work with data in the new file format. The application does not need to be part of the Microsoft Office system or even a Microsoft product."</li>
+<li>Readability of XML allows users to make manual changes at need be</li>
+<li>Allows for find/replace of tags, if something in a precise tag needs to be globally replaced, for example.</li>
+<li>Backwards compatibility! Old Office versions can open and edit New XML formats. Old Office formats can be opened in new Office versions.</li>
+<li>Allows for significant content reuse and data-mining</li>
+<li>Exchanging data is simplified</li>
+<li>XML is an open standard format, making it very easy for other applications to be able to interpret MOOXML formats.</li>
+<li>More robust than binary--helps reduce risk of lost information due to damaged or corrupted files.</li>
+<li>MOOXML uses ZIP to store documents, which </li>
+</ul>
+
+<h3><a href="http://ccollins.wordpress.com/2008/03/03/a-brief-history-of-xml/" title="History of XML">A Brief History of XML</a></h3>
+
+<ul>
+<li>XML history begins with the development of SGML by Charles Goldfarb, Ed Mosher, and Ray Lorie in the 1970's at IBM.</li>
+<li>SGML is a language to specify markup-languages, not a markup-language itself.</li>
+<li>SGML sought to create vocabularies which could be used to mark up documents with structured tags.</li>
+<li>HTML was created by TBL in late 1980's, and was expanded beyond its original vision.</li>
+<li>HTML was created as a presentation technology, so it is mostly inappropriate as a general purpose data storage format.</li>
+<li>"XML bridges this gap between being both human and machine readable, while being flexible enough to support platform and architecture independent data interchange.</li>
+<li>XML allows a software engineer the ability to create a vocabulary, and to use that to describe data.</li>
+<li>This can be done by defining grammars through DTD (Data Type Definition) which resolve to grammars of the Extended Backus Naur Form (EBNF)</li>
+</ul>
+
+<h2>Relational Databases and XML</h2>
+
+<ul>
+<li>As older legacy systems are being upgraded for service oriented architecture and web services, making contained data available in XML formats is becoming more important for engineers.</li>
+<li>Requires approaches for mapping existing relational data to XML formats.</li>
+<li>DTD does NOT have the resolution to take into account some of the finer points of relational data, such as maintaining primary and foreign key and other constraints.</li>
+<li>DTD defines the structure of a well formed XML document using simple format expressions. These do not allow a sufficient level of detail to be used in XML to relational mapping.</li>
+<li>DTD can define how many elements can exist in a list, but can not define what is "too many elements"</li>
+</ul>
+
+<h3><a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=4415506" title="Relational Data Bases and XML Schema">Design of Automatic Database Schema Generator based on XML Schema</a></h3>
+
+<h2>Abstract</h2>
+
+<ul>
+<li>XML Documents are partially used in e-commerce for exchanging information among businesses, and the core corporate systems are expected to be based on XML as web service becomes more present. </li>
+<li>Conventional XML Database Management Systems use XML DTD to express XML document structure. </li>
+<li>Since XML DTD defines simple format expressions, there are numerous difficulties in defining the XML document structure. </li>
+<li>This paper proposes an automatic conversion mechanism and algorithm for the relational database schema using the XML Schema, an W3C standard, in order to store XML data in the relational database generally insed in data content storage based on the XML schema.</li>
+</ul>
+
+<h2>Other Notes and Quotes</h2>
+
+<ul>
+<li>"In addition, traditional DBMSs with intensified XML support, such as Oracle 9i R2, are making their presence in the marketplace with indications that users still prefer well-renowned companies such as Oracle and IBM for DBMS exclusively for XML"</li>
+<li>Such an XML document storage approach can be largely classified into two cases, according to whether there is schema information such as the DTD or XML schema.</li>
+<li>If there is no schema information, there are two approaches:
+<ol>
+<li>Extract schema inforamtion from XML document to generate relational databases</li>
+<li>Disregard the schema information and store only the links and nodes, i.e. the elements that construct the XML document.</li>
+</ol></li>
+<li>If there is schema information, X-ray, Inlining, and Extended Inlining (what are these?!?!) are possible</li>
+</ul>
+
+<h2>XML Schema Conversion Mechanism</h2>
+
+<ul>
+<li>A conversion method is necessary to convert schema in which the structure of XML document was defined into relational database schema.</li>
+<li>Mapping attributes
+<ul>
+<li>Atribute nodes map to (potentially multivalued) scalar tpes and edges pointing to attribute nodes map</li>
+</ul></li>
+</ul>
+
+<h3><a href="http://transcriptvids.com/v/-C-JoyNuQJs.html">Douglas Crockford Speech</a></h3>
+
+<ul>
+<li>"I discovered JSON. I do not claim to have invented JSON, because it already existed in nature. What I did was I found it, I named it, I described how it was useful. I don't claim to be the first person to have discovered it; I know that there are other people who discovered it at least a year before I did. The earliest occurrence I've found was, there was someone at Netscape who was using JavaScript array literals for doing data communication as early as 1996, which was at least five years before I stumbled onto the idea. So the idea's been around there for awhile. What I did was I gave it a specification, and a little website. All the rest of it happened by itself, and I'm going to explain what that means."</li>
+<li>"Our customers said: well, we hate it, because we've never heard of it. Some of our customers said: oh, I wish you'd told us this six months ago, because we just decided to go with XML, so we can't consider anything else now. And some of the people we talked to said: it's not a standard, so we can't use it. I said: it is a standard, it's a subset of ECMA 262. They said: no, that's not a standard. OK. So in order to use this, I had to declare that this is a standard. So that's what I did. I decided it's going to be a standard from now on. So I bought JSON.org."</li>
+<li>"So, there are basically two schools of thought about XML. One which said this is perfection. We started with SGML, which the world loved, and then we got it right, perfect. And then there's the school that said it's awful. But there was one thing they could both agree on, and that is: XML is the standard, so shut up. Shut up! But not everybody shut up."</li>
+<li>"James Clark, who was one of the principle architects of XML, a few months later wrote: "any damn fool could produce a better data format than XML." Which, it turns out, is true."</li>
+<li>"Instead, we got distracted on this other thing, which was one tool to rule them all. That's not good engineering, that's not good craftsmanship, that's not the way you do things. It might be desirable to have one super tool that did everything, but there's never been such a tool, and tools have always been specialized. Part of the craft of engineering is determining, of all the tools available to you, what is the best tool for solving any problem."</li>
+<li>"JSON isn't necessarily the best tool for every job, but for the ones it is, you can use it. And for the ones that it isn't, there are other tools out there that you can use."</li>
+<li>"That doesn't need to be in the format. One of the biggest weaknesses in the JSON format is also a weakness in XML, which is that it cannot easily represent cyclical structures, and can't represent general DAGs. For most applications that's not a requirement, but there's some applications that'd be really desirable for."
+</body>
+</html></li>
+</ul>
